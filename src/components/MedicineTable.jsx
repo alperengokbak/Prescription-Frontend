@@ -238,12 +238,20 @@ export default function MedicineTable() {
         >
           Create Prescription
         </Button>
-        {prescriptionMessage && (
-          <Typography variant="body1" color="red" fontWeight="bold">
-            {prescriptionMessage}
-          </Typography>
-        )}
       </Stack>
+      {prescriptionMessage && (
+        <Typography
+          variant={isDesktop ? "body1" : "body2"}
+          color="red"
+          sx={{
+            width: isDesktop ? "400px" : "300px",
+            alignSelf: "flex-end",
+            fontWeight: "bold",
+          }}
+        >
+          {prescriptionMessage}
+        </Typography>
+      )}
     </>
   );
 }
