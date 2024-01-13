@@ -69,10 +69,13 @@ export default function MedicineTable() {
 
   const createPrescription = async () => {
     try {
-      const response = await axios.post("https://prescription-api-gateway.onrender.com/pharmacy/createPrescription", {
-        id: pharmacy?.id,
-        totalSalesAmount: totalPrice,
-      });
+      const response = await axios.post(
+        "https://prescription-api-gateway.onrender.com/prescription-service/pharmacy/createPrescription",
+        {
+          id: pharmacy?.id,
+          totalSalesAmount: totalPrice,
+        }
+      );
       if (response.status === 200) {
         const jsonData = response.data;
         setMedicines([]);
