@@ -13,6 +13,7 @@ A web application for pharmacies to manage prescriptions, create prescriptions, 
 - [Context](#context)
 - [Services](#services)
 - [Scheduled Task](#scheduled-task)
+- [Screenshots And Video](#screenshots-and-video)
 
 ## Project Structure
 
@@ -81,3 +82,7 @@ The project uses context for managing authentication state.
 ## Scheduled Task
 
 A scheduled task runs every day at 01:00 AM to send email notifications to each pharmacy. This task is responsible for notifying pharmacies about the new prescriptions.
+
+## Screenshots And Video
+
+[Introductory Video](https://youtu.be/B8H67VWwmHY)
