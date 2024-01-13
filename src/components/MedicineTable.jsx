@@ -26,8 +26,6 @@ export default function MedicineTable() {
   const [totalPrice, setTotalPrice] = React.useState(0);
   const [prescriptionMessage, setPrescriptionMessage] = React.useState("");
 
-  console.log(prescriptionMessage);
-
   React.useEffect(() => {
     const newTotalPrice = medicines.reduce((sum, medicine) => sum + (parseInt(medicine?.price) || 0), 0);
     setTotalPrice(newTotalPrice);
