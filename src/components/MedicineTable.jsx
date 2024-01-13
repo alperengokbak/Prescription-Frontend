@@ -11,7 +11,6 @@ import {
   TableCell,
   Table,
   TableBody,
-  Autocomplete,
 } from "@mui/material";
 import { AuthContext } from "../context/Authentication";
 import axios from "axios";
@@ -25,6 +24,9 @@ export default function MedicineTable() {
   const [medicines, setMedicines] = React.useState([]);
   const [errorForMedicine, setErrorForMedicine] = React.useState(null);
   const [totalPrice, setTotalPrice] = React.useState(0);
+  const [prescriptionMessage, setPrescriptionMessage] = React.useState("");
+
+  console.log(prescriptionMessage);
 
   React.useEffect(() => {
     const newTotalPrice = medicines.reduce((sum, medicine) => sum + (parseInt(medicine?.price) || 0), 0);
@@ -78,6 +80,7 @@ export default function MedicineTable() {
       );
       if (response.status === 200) {
         const jsonData = response.data;
+        setPrescriptionMessage(jsonData.message);
         setMedicines([]);
         setSelectedMedicine(null);
         setMedicineName("");
@@ -235,6 +238,11 @@ export default function MedicineTable() {
         >
           Create Prescription
         </Button>
+        {prescriptionMessage && (
+          <Typography variant="body1" color="red" fontWeight="bold">
+            {prescriptionMessage}
+          </Typography>
+        )}
       </Stack>
     </>
   );
