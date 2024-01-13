@@ -34,7 +34,7 @@ export default function LoginScreen() {
       password: data.get("password"),
     });
 
-    await fetch("http://localhost:3000/prescription-service/pharmacy/loginPharmacy", {
+    await fetch("https://prescription-api-gateway.onrender.com/prescription-service/pharmacy/loginPharmacy", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",

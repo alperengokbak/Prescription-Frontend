@@ -46,9 +46,12 @@ export default function MedicineTable() {
 
   const searchMedicine = async () => {
     try {
-      const response = await axios.post("http://localhost:3000/prescription-service/client/searchMedicine", {
-        name: medicineName,
-      });
+      const response = await axios.post(
+        "https://prescription-api-gateway.onrender.com/prescription-service/client/searchMedicine",
+        {
+          name: medicineName,
+        }
+      );
       if (response.status === 200) {
         const jsonData = response.data;
         if (jsonData.length === 0) {
@@ -66,7 +69,7 @@ export default function MedicineTable() {
 
   const createPrescription = async () => {
     try {
-      const response = await axios.post("http://localhost:3000/prescription-service/pharmacy/createPrescription", {
+      const response = await axios.post("https://prescription-api-gateway.onrender.com/pharmacy/createPrescription", {
         id: pharmacy?.id,
         totalSalesAmount: totalPrice,
       });

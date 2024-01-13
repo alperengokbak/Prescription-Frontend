@@ -2,11 +2,14 @@ export const LoginAuthentication = async () => {
   const token = localStorage.getItem("token");
   if (token) {
     try {
-      const response = await fetch("http://localhost:3000/prescription-service/pharmacy/checkPharmacy", {
-        headers: {
-          Authorization: `Bearer ${token}`,
-        },
-      });
+      const response = await fetch(
+        "https://prescription-api-gateway.onrender.com/prescription-service/pharmacy/checkPharmacy",
+        {
+          headers: {
+            Authorization: `Bearer ${token}`,
+          },
+        }
+      );
       if (!response.ok) {
         throw new Error("Failed to checkLoggedIn");
       }

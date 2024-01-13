@@ -25,9 +25,12 @@ function Home() {
 
   const checkPatient = async () => {
     try {
-      const response = await axios.post("http://localhost:3000/prescription-service/pharmacy/searchPatientByIdNumber", {
-        idNumber: patientIdNumber,
-      });
+      const response = await axios.post(
+        "https://prescription-api-gateway.onrender.com/prescription-service/pharmacy/searchPatientByIdNumber",
+        {
+          idNumber: patientIdNumber,
+        }
+      );
       if (response.status === 200) {
         const jsonData = response.data;
         setPatient({ idNumber: patientIdNumber, fullName: jsonData.patient?.fullName });

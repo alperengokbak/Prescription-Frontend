@@ -31,7 +31,7 @@ export default function RegisterScreen() {
       password: data.get("password"),
     });
 
-    fetch("http://localhost:3000/prescription-service/pharmacy/createPharmacy", {
+    fetch("https://prescription-api-gateway.onrender.com/pharmacy/createPharmacy", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
