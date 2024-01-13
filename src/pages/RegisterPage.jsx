@@ -43,7 +43,7 @@ export default function RegisterScreen() {
         if (data.status === "Success") {
           setPharmacy(data.pharmacy);
           localStorage.setItem("token", data.token);
-          navigate("/");
+          navigate("/login");
         }
       })
       .catch((err) => console.log(err));
