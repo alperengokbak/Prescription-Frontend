@@ -85,4 +85,4 @@ A scheduled task runs every day at 01:00 AM to send email notifications to each 
 
 ## Screenshots And Video
 
-[Introductory Video](https://youtu.be/B8H67VWwmHY)
+[Introductory Video](https://youtu.be/ZMvQaYzIY6w)
