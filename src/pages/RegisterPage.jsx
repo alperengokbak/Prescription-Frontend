@@ -41,8 +41,6 @@ export default function RegisterScreen() {
       .then((res) => res.json())
       .then((data) => {
         if (data.status === "Success") {
-          setPharmacy(data.pharmacy);
-          localStorage.setItem("token", data.token);
           navigate("/login");
         }
       })
@@ -68,11 +66,11 @@ export default function RegisterScreen() {
           <Grid container spacing={2}>
             <Grid item xs={12}>
               <TextField
-                name="name"
+                name="Name"
                 required
                 fullWidth
                 id="name"
-                label="name"
+                label="Name"
                 autoFocus
                 onChange={(e) => setValues({ ...values, name: e.target.value })}
               />

@@ -31,7 +31,7 @@ function App() {
   };
 
   React.useEffect(() => {
-    if (!pharmacy && pharmacy !== null) {
+    if (!pharmacy) {
       checkPharmacy();
     }
   }, [pharmacy]);
